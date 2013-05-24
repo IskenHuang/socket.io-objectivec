@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'SocketTesterARC' target in the 'SocketTesterARC' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifdef DEBUG
+
+#   define DLog(__FORMAT__, ...) NSLog((@"[Line %d] %s ||" __FORMAT__), __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#   define DLogv(var) NSLog( @"[Line %d] %s || %s => %@", __LINE__, __FUNCTION__, #var, var)
+#   define DLogd(var) NSLog( @"[Line %d] %s || %s => %d", __LINE__, __FUNCTION__, #var, var)
+#   define DLogf(var) NSLog( @"[Line %d] %s || %s => %f", __LINE__, __FUNCTION__, #var, var)
+
+#else
+
+#   define DLog(__FORMAT__, ...) NSLog((@""))
+#   define DLogv(var) NSLog( @"")
+#   define DLogd(var) NSLog( @"")
+#   define DLogf(var) NSLog( @"")
+
+#endif
+
